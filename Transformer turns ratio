@@ -1,0 +1,21 @@
+print("TRANSFORMER TURNS RATIO CALCULATOR")
+print("-" * 40)
+
+N1 = float(input("Enter primary turns: "))
+N2 = float(input("Enter secondary turns: "))
+V1 = float(input("Enter primary voltage (V): "))
+
+ratio = N1 / N2
+V2 = V1 * (N2 / N1)
+
+print("\nRESULT")
+print("Turns Ratio =", round(ratio, 3))
+print("Primary Voltage =", V1, "V")
+print("Secondary Voltage =", round(V2, 2), "V")
+
+if N2 > N1:
+    print("Type: Step-up transformer")
+elif N2 < N1:
+    print("Type: Step-down transformer")
+else:
+    print("Type: 1:1 transformer")
