@@ -1,0 +1,18 @@
+print("BATTERY CHARGING TIME CALCULATOR")
+print("-" * 40)
+
+capacity = float(input("Enter battery capacity (Ah): "))
+charging_current = float(input("Enter charging current (A): "))
+efficiency = float(input("Enter charging efficiency (%): "))
+
+ideal_time = capacity / charging_current
+actual_time = ideal_time / (efficiency / 100)
+
+print("\nRESULT")
+print("Battery Capacity :", capacity, "Ah")
+print("Charging Current :", charging_current, "A")
+print("Efficiency       :", efficiency, "%")
+print("Ideal Charging Time:",
+      round(ideal_time, 2), "hours")
+print("Actual Charging Time:",
+      round(actual_time, 2), "hours")
