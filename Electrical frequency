@@ -1,0 +1,19 @@
+print("ELECTRICAL FREQUENCY CALCULATOR")
+print("-" * 40)
+
+poles = int(input("Enter number of poles: "))
+speed = float(input("Enter machine speed (RPM): "))
+
+frequency = (poles * speed) / 120
+
+print("\nRESULT")
+print("Poles :", poles)
+print("Speed :", speed, "RPM")
+print("Frequency :", round(frequency, 2), "Hz")
+
+if frequency == 50:
+    print("This is a 50 Hz system.")
+elif frequency == 60:
+    print("This is a 60 Hz system.")
+else:
+    print("Frequency is different from 50/60 Hz.")
