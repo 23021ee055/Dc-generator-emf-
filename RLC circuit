@@ -1,0 +1,22 @@
+import math
+
+print("RLC CIRCUIT CALCULATOR")
+print("-" * 35)
+
+R = float(input("Enter resistance (Ohm): "))
+L = float(input("Enter inductance (H): "))
+C = float(input("Enter capacitance (F): "))
+f = float(input("Enter frequency (Hz): "))
+
+XL = 2 * math.pi * f * L
+XC = 1 / (2 * math.pi * f * C)
+
+Z = math.sqrt(R ** 2 + (XL - XC) ** 2)
+
+current = float(input("Enter supply voltage (V): ")) / Z
+
+print("\nRESULT")
+print("Inductive Reactance  :", round(XL, 2), "Ohm")
+print("Capacitive Reactance :", round(XC, 2), "Ohm")
+print("Impedance            :", round(Z, 2), "Ohm")
+print("Circuit Current      :", round(current, 2), "A")
