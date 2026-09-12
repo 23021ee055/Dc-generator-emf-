@@ -1,0 +1,24 @@
+import math
+
+print("POWER FACTOR IMPROVEMENT CALCULATOR")
+print("-" * 45)
+
+P = float(input("Enter active power (kW): "))
+pf1 = float(input("Enter existing power factor: "))
+pf2 = float(input("Enter desired power factor: "))
+frequency = float(input("Enter frequency (Hz): "))
+voltage = float(input("Enter voltage (V): "))
+
+phi1 = math.acos(pf1)
+phi2 = math.acos(pf2)
+
+Qc = P * (math.tan(phi1) - math.tan(phi2))
+
+C = (Qc * 1000) / (2 * math.pi * frequency * voltage ** 2)
+
+print("\nRESULT")
+print("Active Power       :", P, "kW")
+print("Existing PF        :", pf1)
+print("Desired PF         :", pf2)
+print("Required Capacitive Power:", round(Qc, 3), "kVAR")
+print("Required Capacitance:", round(C * 1e6, 2), "uF")
