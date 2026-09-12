@@ -1,0 +1,17 @@
+print("DC MOTOR SPEED CALCULATOR")
+print("-" * 35)
+
+P = int(input("Enter number of poles: "))
+flux = float(input("Enter flux per pole (Wb): "))
+Z = int(input("Enter armature conductors: "))
+A = int(input("Enter parallel paths: "))
+E = float(input("Enter back EMF (V): "))
+
+N = (60 * A * E) / (P * flux * Z)
+
+print("\nRESULT")
+print("Number of poles :", P)
+print("Flux            :", flux, "Wb")
+print("Conductors      :", Z)
+print("Back EMF        :", E, "V")
+print("Motor Speed     :", round(N, 2), "RPM")
