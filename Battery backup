@@ -1,0 +1,20 @@
+print("BATTERY BACKUP CALCULATOR")
+print("-" * 35)
+
+battery_voltage = float(input("Enter battery voltage (V): "))
+battery_capacity = float(input("Enter battery capacity (Ah): "))
+load_power = float(input("Enter load power (W): "))
+efficiency = float(input("Enter inverter efficiency (%): "))
+
+efficiency_decimal = efficiency / 100
+
+battery_energy = battery_voltage * battery_capacity
+usable_energy = battery_energy * efficiency_decimal
+backup_time = usable_energy / load_power
+
+print("\nRESULT")
+print("Battery Voltage :", battery_voltage, "V")
+print("Battery Capacity:", battery_capacity, "Ah")
+print("Load Power      :", load_power, "W")
+print("Efficiency      :", efficiency, "%")
+print("Backup Time     :", round(backup_time, 2), "hours")
