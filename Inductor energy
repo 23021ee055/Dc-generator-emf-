@@ -1,0 +1,17 @@
+print("INDUCTOR ENERGY CALCULATOR")
+print("-" * 35)
+
+L = float(input("Enter inductance (H): "))
+I = float(input("Enter current (A): "))
+
+energy = 0.5 * L * I ** 2
+
+print("\nRESULT")
+print("Inductance :", L, "H")
+print("Current    :", I, "A")
+print("Stored Energy :", round(energy, 4), "J")
+
+if energy > 100:
+    print("High stored energy.")
+else:
+    print("Stored energy is within the entered range.")
