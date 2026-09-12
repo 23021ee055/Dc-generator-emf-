@@ -1,0 +1,21 @@
+print("ELECTRICAL ENERGY CONSUMPTION CALCULATOR")
+print("-" * 45)
+
+n = int(input("Enter number of appliances: "))
+total_units = 0
+
+for i in range(n):
+    print("\nAppliance", i + 1)
+    name = input("Enter appliance name: ")
+    power = float(input("Enter power (W): "))
+    hours = float(input("Enter usage hours/day: "))
+
+    daily_energy = (power * hours) / 1000
+    monthly_energy = daily_energy * 30
+    total_units += monthly_energy
+
+    print(name, "monthly consumption:",
+          round(monthly_energy, 2), "units")
+
+print("\nTotal Monthly Consumption:",
+      round(total_units, 2), "units")
