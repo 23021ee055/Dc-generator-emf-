@@ -1,0 +1,19 @@
+print("TRANSFORMER EFFICIENCY CALCULATOR")
+print("-" * 40)
+
+output_power = float(input("Enter output power (W): "))
+copper_loss = float(input("Enter copper loss (W): "))
+iron_loss = float(input("Enter iron loss (W): "))
+
+total_loss = copper_loss + iron_loss
+input_power = output_power + total_loss
+
+efficiency = (output_power / input_power) * 100
+
+print("\nTRANSFORMER DETAILS")
+print("Output Power :", output_power, "W")
+print("Copper Loss  :", copper_loss, "W")
+print("Iron Loss    :", iron_loss, "W")
+print("Total Loss   :", total_loss, "W")
+print("Input Power  :", input_power, "W")
+print("Efficiency   :", round(efficiency, 2), "%")
