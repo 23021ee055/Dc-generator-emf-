@@ -1,0 +1,14 @@
+print("CAPACITOR ENERGY CALCULATOR")
+print("-" * 35)
+
+C = float(input("Enter capacitance (F): "))
+V = float(input("Enter voltage (V): "))
+
+energy = 0.5 * C * V ** 2
+charge = C * V
+
+print("\nRESULT")
+print("Capacitance :", C, "F")
+print("Voltage     :", V, "V")
+print("Charge      :", round(charge, 4), "C")
+print("Stored Energy:", round(energy, 4), "J")
