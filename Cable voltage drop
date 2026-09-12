@@ -1,0 +1,20 @@
+print("CABLE VOLTAGE DROP CALCULATOR")
+print("-" * 40)
+
+current = float(input("Enter current (A): "))
+length = float(input("Enter cable length (m): "))
+resistance = float(input("Enter cable resistance (Ohm/m): "))
+supply_voltage = float(input("Enter supply voltage (V): "))
+
+total_resistance = resistance * length * 2
+voltage_drop = current * total_resistance
+load_voltage = supply_voltage - voltage_drop
+
+drop_percentage = (voltage_drop / supply_voltage) * 100
+
+print("\nRESULT")
+print("Total Cable Resistance :", total_resistance, "Ohm")
+print("Voltage Drop           :", round(voltage_drop, 2), "V")
+print("Load Voltage           :", round(load_voltage, 2), "V")
+print("Voltage Drop Percentage:",
+      round(drop_percentage, 2), "%")
