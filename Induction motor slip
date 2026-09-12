@@ -1,0 +1,18 @@
+print("INDUCTION MOTOR SLIP CALCULATOR")
+print("-" * 40)
+
+Ns = float(input("Enter synchronous speed (RPM): "))
+Nr = float(input("Enter rotor speed (RPM): "))
+
+slip = (Ns - Nr) / Ns
+percentage = slip * 100
+frequency = float(input("Enter supply frequency (Hz): "))
+
+rotor_frequency = slip * frequency
+
+print("\nRESULT")
+print("Synchronous Speed :", Ns, "RPM")
+print("Rotor Speed       :", Nr, "RPM")
+print("Slip              :", round(slip, 4))
+print("Slip Percentage   :", round(percentage, 2), "%")
+print("Rotor Frequency   :", round(rotor_frequency, 2), "Hz")
