@@ -1,0 +1,19 @@
+print("SYNCHRONOUS SPEED CALCULATOR")
+print("-" * 40)
+
+frequency = float(input("Enter frequency (Hz): "))
+poles = int(input("Enter number of poles: "))
+
+speed = (120 * frequency) / poles
+
+print("\nRESULT")
+print("Frequency :", frequency, "Hz")
+print("Poles     :", poles)
+print("Synchronous Speed :", round(speed, 2), "RPM")
+
+if speed >= 3000:
+    print("High-speed machine")
+elif speed >= 1000:
+    print("Medium-speed machine")
+else:
+    print("Low-speed machine")
