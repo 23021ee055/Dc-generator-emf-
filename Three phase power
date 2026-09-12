@@ -1,0 +1,22 @@
+import math
+
+print("THREE PHASE POWER CALCULATOR")
+print("-" * 40)
+
+V = float(input("Enter line voltage (V): "))
+I = float(input("Enter line current (A): "))
+pf = float(input("Enter power factor: "))
+
+power = math.sqrt(3) * V * I * pf
+
+print("\nRESULT")
+print("Line Voltage :", V, "V")
+print("Line Current :", I, "A")
+print("Power Factor :", pf)
+print("Three Phase Power :", round(power, 2), "W")
+print("Three Phase Power :", round(power / 1000, 2), "kW")
+
+if pf >= 0.8:
+    print("Power factor is good.")
+else:
+    print("Power factor needs improvement.")
