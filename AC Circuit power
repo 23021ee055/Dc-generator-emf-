@@ -1,0 +1,23 @@
+import math
+
+print("AC CIRCUIT POWER CALCULATOR")
+print("-" * 40)
+
+voltage = float(input("Enter RMS voltage (V): "))
+current = float(input("Enter RMS current (A): "))
+phase_angle = float(input("Enter phase angle (degrees): "))
+
+angle = math.radians(phase_angle)
+
+pf = math.cos(angle)
+real_power = voltage * current * pf
+reactive_power = voltage * current * math.sin(angle)
+apparent_power = voltage * current
+
+print("\nRESULT")
+print("RMS Voltage    :", voltage, "V")
+print("RMS Current    :", current, "A")
+print("Power Factor   :", round(pf, 3))
+print("Real Power     :", round(real_power, 2), "W")
+print("Reactive Power :", round(reactive_power, 2), "VAR")
+print("Apparent Power :", round(apparent_power, 2), "VA")
