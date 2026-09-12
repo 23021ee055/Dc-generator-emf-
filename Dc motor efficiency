@@ -1,0 +1,16 @@
+print("DC MOTOR EFFICIENCY CALCULATOR")
+print("-" * 40)
+
+input_voltage = float(input("Enter input voltage (V): "))
+input_current = float(input("Enter input current (A): "))
+output_power = float(input("Enter mechanical output power (W): "))
+
+input_power = input_voltage * input_current
+efficiency = (output_power / input_power) * 100
+loss = input_power - output_power
+
+print("\nRESULT")
+print("Input Power  :", round(input_power, 2), "W")
+print("Output Power :", round(output_power, 2), "W")
+print("Power Loss   :", round(loss, 2), "W")
+print("Efficiency   :", round(efficiency, 2), "%")
