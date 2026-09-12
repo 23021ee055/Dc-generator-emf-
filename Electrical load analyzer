@@ -1,0 +1,25 @@
+print("ELECTRICAL LOAD ANALYZER")
+print("-" * 40)
+
+n = int(input("Enter number of loads: "))
+total_power = 0
+
+for i in range(n):
+    print("\nLoad", i + 1)
+
+    name = input("Enter load name: ")
+    power = float(input("Enter power rating (W): "))
+    quantity = int(input("Enter quantity: "))
+    hours = float(input("Enter operating hours/day: "))
+
+    load_power = power * quantity
+    energy = load_power * hours / 1000
+
+    total_power += load_power
+
+    print("Load Name:", name)
+    print("Total Load Power:", load_power, "W")
+    print("Daily Energy:", round(energy, 2), "kWh")
+
+print("\nTOTAL CONNECTED LOAD:",
+      round(total_power, 2), "W")
