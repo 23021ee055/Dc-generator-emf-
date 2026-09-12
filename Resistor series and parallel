@@ -1,0 +1,22 @@
+print("RESISTOR CALCULATOR")
+print("-" * 30)
+
+n = int(input("Enter number of resistors: "))
+resistors = []
+
+for i in range(n):
+    r = float(input(f"Enter R{i+1} (Ohm): "))
+    resistors.append(r)
+
+series = sum(resistors)
+
+parallel_inverse = 0
+
+for r in resistors:
+    parallel_inverse += 1 / r
+
+parallel = 1 / parallel_inverse
+
+print("\nResistors:", resistors)
+print("Series Resistance   :", round(series, 2), "Ohm")
+print("Parallel Resistance :", round(parallel, 2), "Ohm")
