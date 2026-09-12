@@ -1,0 +1,18 @@
+print("LED SERIES RESISTOR CALCULATOR")
+print("-" * 40)
+
+supply = float(input("Enter supply voltage (V): "))
+led_voltage = float(input("Enter LED forward voltage (V): "))
+current_ma = float(input("Enter desired LED current (mA): "))
+
+current = current_ma / 1000
+
+resistance = (supply - led_voltage) / current
+power = current ** 2 * resistance
+
+print("\nRESULT")
+print("Supply Voltage :", supply, "V")
+print("LED Voltage    :", led_voltage, "V")
+print("LED Current    :", current_ma, "mA")
+print("Required Resistor:", round(resistance, 2), "Ohm")
+print("Resistor Power   :", round(power, 3), "W")
