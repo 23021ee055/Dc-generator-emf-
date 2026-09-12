@@ -1,0 +1,28 @@
+print("ELECTRICAL SAFETY LOAD CHECKER")
+print("-" * 40)
+
+voltage = float(input("Enter supply voltage (V): "))
+rating = float(input("Enter circuit breaker rating (A): "))
+
+n = int(input("Enter number of appliances: "))
+
+total_current = 0
+
+for i in range(n):
+    print("\nAppliance", i + 1)
+    power = float(input("Enter appliance power (W): "))
+    quantity = int(input("Enter quantity: "))
+
+    current = (power * quantity) / voltage
+    total_current += current
+
+    print("Appliance Current:",
+          round(current, 2), "A")
+
+print("\nTOTAL CURRENT:",
+      round(total_current, 2), "A")
+
+if total_current <= rating:
+    print("STATUS: SAFE within entered breaker rating.")
+else:
+    print("STATUS: OVERLOAD WARNING!")
