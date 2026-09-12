@@ -1,0 +1,24 @@
+print("ELECTRICITY BILL CALCULATOR")
+print("-" * 35)
+
+units = float(input("Enter electricity units: "))
+
+if units <= 100:
+    bill = units * 1.50
+elif units <= 200:
+    bill = 100 * 1.50 + (units - 100) * 2.50
+elif units <= 500:
+    bill = 100 * 1.50 + 100 * 2.50 + (units - 200) * 4.00
+else:
+    bill = (100 * 1.50 +
+            100 * 2.50 +
+            300 * 4.00 +
+            (units - 500) * 6.00)
+
+fixed_charge = 50
+total = bill + fixed_charge
+
+print("\nElectricity Units :", units)
+print("Energy Charge     :", round(bill, 2))
+print("Fixed Charge      :", fixed_charge)
+print("Total Bill        :", round(total, 2))
