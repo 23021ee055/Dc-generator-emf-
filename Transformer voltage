@@ -1,0 +1,15 @@
+print("TRANSFORMER VOLTAGE REGULATION")
+print("-" * 40)
+
+no_load = float(input("Enter no-load secondary voltage (V): "))
+full_load = float(input("Enter full-load secondary voltage (V): "))
+
+regulation = ((no_load - full_load) / full_load) * 100
+voltage_drop = no_load - full_load
+
+print("\nRESULT")
+print("No Load Voltage   :", no_load, "V")
+print("Full Load Voltage :", full_load, "V")
+print("Voltage Drop      :", round(voltage_drop, 2), "V")
+print("Voltage Regulation:",
+      round(regulation, 2), "%")
