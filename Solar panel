@@ -1,0 +1,22 @@
+print("SOLAR PANEL CALCULATOR")
+print("-" * 35)
+
+daily_load = float(input("Enter daily energy requirement (Wh): "))
+sun_hours = float(input("Enter peak sun hours/day: "))
+system_efficiency = float(input("Enter system efficiency (%): "))
+
+efficiency = system_efficiency / 100
+
+panel_power = daily_load / (sun_hours * efficiency)
+
+print("\nRESULT")
+print("Daily Energy Requirement :", daily_load, "Wh")
+print("Sun Hours                :", sun_hours)
+print("System Efficiency        :", system_efficiency, "%")
+print("Required Solar Capacity  :",
+      round(panel_power, 2), "W")
+
+number = int(input("Enter panel rating (W): "))
+panels = math.ceil(panel_power / number)
+
+print("Required Number of Panels:", panels)
