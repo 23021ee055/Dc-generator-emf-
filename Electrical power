@@ -1,0 +1,19 @@
+print("ELECTRICAL POWER CALCULATOR")
+print("-" * 35)
+
+V = float(input("Enter voltage (V): "))
+I = float(input("Enter current (A): "))
+pf = float(input("Enter power factor: "))
+
+real_power = V * I * pf
+apparent_power = V * I
+reactive_power = ((apparent_power ** 2) -
+                  (real_power ** 2)) ** 0.5
+
+print("\nRESULT")
+print("Voltage          :", V, "V")
+print("Current          :", I, "A")
+print("Power Factor     :", pf)
+print("Real Power       :", round(real_power, 2), "W")
+print("Apparent Power   :", round(apparent_power, 2), "VA")
+print("Reactive Power   :", round(reactive_power, 2), "VAR")
