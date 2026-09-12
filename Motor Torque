@@ -1,0 +1,14 @@
+print("MOTOR TORQUE CALCULATOR")
+print("-" * 35)
+
+power_kw = float(input("Enter motor power (kW): "))
+speed = float(input("Enter motor speed (RPM): "))
+
+power_watt = power_kw * 1000
+
+torque = (60 * power_watt) / (2 * 3.14159 * speed)
+
+print("\nRESULT")
+print("Motor Power :", power_kw, "kW")
+print("Motor Speed :", speed, "RPM")
+print("Motor Torque:", round(torque, 2), "N-m")
