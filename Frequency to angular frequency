@@ -1,0 +1,14 @@
+import math
+
+print("ANGULAR FREQUENCY CALCULATOR")
+print("-" * 35)
+
+frequency = float(input("Enter frequency (Hz): "))
+
+omega = 2 * math.pi * frequency
+period = 1 / frequency
+
+print("\nRESULT")
+print("Frequency        :", frequency, "Hz")
+print("Angular Frequency:", round(omega, 3), "rad/s")
+print("Time Period      :", round(period, 5), "seconds")
